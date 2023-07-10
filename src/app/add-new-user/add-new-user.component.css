@@ -1,0 +1,50 @@
+*{}
+
+h1{}
+h2{}
+
+p{}
+
+input {
+  display: block;
+  width: 40%;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+  /* border: radius; */
+  /* color: red; */
+  
+  border: 2px solid red;
+  border-radius: 12px;
+  /* padding: 5px; */
+}
+
+/* class-s-a */
+.w3-container{  
+  padding: 0.3%;
+  
+
+}
+
+/* class-s-b */
+.w3-button w3-black{  
+
+}
+
+/* class-s-c */
+.w3-modal{}
+
+/* class-s-d */
+.w3-modal-content{}
+
+/* class-s-e */
+.w3-container w3-teal{}
+
+/* class-s-f*/
+.w3-button w3-display-topright{}
+
+/* class-s-g */
+.btn btn-primary{}
+
+/* Footer */
+.w3-container w3-teal{}

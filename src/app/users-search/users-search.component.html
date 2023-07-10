@@ -1,0 +1,10 @@
+<div id="search-component">
+  
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search-box" />
+
+  <ul class="search-result">
+    <li *ngFor="let user of _userOes$ | async" >
+      <a routerLink="/users-details/{{user._id}}">{{user._userName}}</a>
+    </li>
+  </ul>
+</div>

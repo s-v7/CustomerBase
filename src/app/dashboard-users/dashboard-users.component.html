@@ -1,0 +1,171 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add New User
+</button>
+	<app-users-search></app-users-search>
+
+<div class="header">
+	<h2> Top Users DashBoard </h2>
+</div>
+
+<!-- Inicio Modal Add New User -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>New User</p>
+	<form action=".">
+	<div class="input-group">
+  	<span class="input-group-text">E-mail and UserName</span>
+  	<input id="email" #_email type="email" aria-label="Email" placeholder="E-mail" class="form-control border border-primary">
+  	<input id="user-name" #_userName type="text" aria-label="User Name" placeholder="Username" class="form-control border border-primary">
+	<!-- <input type="text" [(ngModel)]="favoriteColor"> 
+	<label for="email">Name: </label>
+	<input id="email" type="text" [formControl]="email"> -->
+	
+	</div>
+	</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="add(_email.value)">SaveEmail</button> 
+        <!-- <button type="submit" class="btn btn-primary" (click)="addUserName(_userName.value)">SaveUser</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Inicio Modal Visualize -->
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="visualizeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Visualize User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Visualize User</p>
+	<div class="input-group">
+  	<input id="email" type="text" aria-label="Email" #_email placeholder="E-mail" class="form-control border border-info" disabled>
+  	<input id="user-name" type="text" aria-label="User Name" placeholder="Username"  #_userName  class="form-control border border-info" disabled>
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim Modal Visualize -->
+
+<!-- Inicio Modal Update -->
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Update User</p>
+	<div class="input-group">
+  	<input id="email" type="text" aria-label="Email" #_email placeholder="E-mail" class="form-control border border-warning">
+  	<input id="user-name" type="text" aria-label="User Name" placeholder="Username"  #_userName  class="form-control border border-warning">
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Update</button> 
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim Modal Update -->
+
+<!-- Inicio Modal Delete -->
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Delete User</p>
+	<div class="input-group">
+  	<input id="email" type="text" aria-label="Email" #_email placeholder="E-mail" class="form-control border border-danger" disabled>
+  	<input id="user-name" type="text" aria-label="User Name" placeholder="Username"  #_userName  class="form-control border border-danger" disabled>
+	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" >Delete</button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fim Modal Delete -->
+
+<div class="usersoes-menu">                                    
+  <!-- <a *ngFor="let user of _users"routerLink="/users-details/{{user._id}}">{{ user._email }}</a> -->
+
+<div class="container-fluid">
+<div class="table">
+<table class="table table-bordered table-hover"  style="width: 100%">
+  <caption>List of users</caption>
+	<thead class="thead-dark">
+	<tr>
+		<th scope="col">Id</th>
+		<th scope="col">Email</th>
+		<th scope="col">UserName</th>
+		<th scope="col">Actions</th>
+		
+	</tr>
+	</thead>
+	<tbody class="table-group-divider" *ngIf="_users">
+	<tr  *ngFor="let user of _users">
+		
+		 <td>{{user._id}}</td>
+		 <td>{{user._email}}</td>
+		 <td>{{user._userName}}</td>
+		
+		<td>
+		    <button class="btn btn-info" 
+				data-bs-toggle="modal" 
+				data-bs-target="#visualizeModal"  
+				title="Visualize"><i class="bi-solid bi-eye"></i>
+		    </button>
+      		   
+		    <button class="btn btn-warning" 
+				data-bs-toggle="modal" 
+				data-bs-target="#updateModal"  
+				title="Update"><i class="bi-solid bi-pencil-square"></i>
+		    </button>
+		    
+		    <button class="btn btn-danger" 
+				data-bs-toggle="modal" 
+				data-bs-target="#deleteModal" 
+				title="Delete"><i class="bi-solid bi-trash"></i>
+		    </button>
+		</td>
+		
+	</tr>
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
