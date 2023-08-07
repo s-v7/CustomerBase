@@ -25,9 +25,6 @@
   	<span class="input-group-text">E-mail and UserName</span>
   	<input id="email" #_email type="email" aria-label="Email" placeholder="E-mail" class="form-control border border-primary">
   	<input id="user-name" #_userName type="text" aria-label="User Name" placeholder="Username" class="form-control border border-primary">
-	<!-- <input type="text" [(ngModel)]="favoriteColor"> 
-	<label for="email">Name: </label>
-	<input id="email" type="text" [formControl]="email"> -->
 	
 	</div>
 	</form>
@@ -35,7 +32,6 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" (click)="add(_email.value)">SaveEmail</button> 
-        <!-- <button type="submit" class="btn btn-primary" (click)="addUserName(_userName.value)">SaveUser</button> -->
       </div>
     </div>
   </div>
@@ -120,8 +116,6 @@
 <!-- Fim Modal Delete -->
 
 <div class="usersoes-menu">                                    
-  <!-- <a *ngFor="let user of _users"routerLink="/users-details/{{user._id}}">{{ user._email }}</a> -->
-
 <div class="container-fluid">
 <div class="table">
 <table class="table table-bordered table-hover"  style="width: 100%">
@@ -160,10 +154,8 @@
 				data-bs-target="#deleteModal" 
 				title="Delete"><i class="bi-solid bi-trash"></i>
 		    </button>
-		</td>
-		
+		</td>		
 	</tr>
-
 	</tbody>
 </table>
 </div>
