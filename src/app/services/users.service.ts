@@ -20,17 +20,6 @@ export class UsersService {
 	httpOptions = {headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
 	constructor(private httpClient: HttpClient, private _messageService: MessagesService) { }
-	/*
-	_getAllUsers(): Observable<Users[]> {
-		//const USER = of(USERs);
-		this._messageService.add(`MessagesService: fetched USERs`);
-		return this.httpClient.get<Users[]>(this.uri);
-	 }
-	_getUsersById(id: number): Observable<Users> {
-		const user =  USERs.find(use => use._id === id)!;
-		this._messageService.add(`MessagesService: fetched user id=${id}`);
-		return of(user);
-	}*/
 
 	getAllUsers(): Observable<Users[]> {
 		return this.httpClient.get<Users[]>(this.uri)
@@ -73,13 +62,6 @@ export class UsersService {
       catchError(this.handleError<Users[]>('searchUser', []))
     );
   }
-  /*
-  search(userName: string): Observable<Users[]> {
-	if(!userName.trim()) {
-		return of([]);
-	}
-  }
-  */
   //////// Save methods //////////
 
   /** POST: add a new User to the server */
@@ -132,12 +114,4 @@ export class UsersService {
   private log(msg: string) {
     this._messageService.add(`MessagesService log: ${msg}`);
   }
-
-
 }
-
-
-
-
-
-
