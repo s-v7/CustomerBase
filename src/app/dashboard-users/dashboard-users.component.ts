@@ -2,22 +2,22 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Users } from '../models/users';
 import { UsersService } from '../services/users.service';
 import { MessagesService } from '../services/messages.service';
-//import {Sort} from '@angular/material';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-dashboard-users',
   templateUrl: './dashboard-users.component.html',
   styleUrls: ['./dashboard-users.component.css']
 })
 export class DashboardUsersComponent implements OnInit {
-
-	  favoriteColor = '';
-	 email = new FormControl('');
-	 //_userName = new FormControl('');
 	
 	 _users: Users[] = [];
-	
-	 //sortedData;
+
+   	checkOutForm = this.formBuilder.group({
+		  _id: '',
+		  _email: '',
+		  _userName: ''
+	  });
+  
 
 	constructor(private _userService: UsersService, 
 			private _messageService: MessagesService
