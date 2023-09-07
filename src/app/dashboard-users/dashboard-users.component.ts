@@ -64,4 +64,12 @@ export class DashboardUsersComponent implements OnInit {
 		this._userService.addUser({ usr } as unknown as Users)
 			.subscribe(user => {this._users.push(user);});
 	}
+  	onSubmit(): void {
+		  //this.addToBook(this.Object);
+        if(this.checkOutForm.value.id === ""){
+			      console.warn('You orde has been submitted', this.checkOutForm.value);
+			      //this.getId(this.Object);
+			      this.checkOutForm.reset();
+        }
+		}
 }
