@@ -23,8 +23,16 @@
 	<form action=".">
 	<div class="input-group">
   	<span class="input-group-text">E-mail and UserName</span>
-  	<input id="email" #_email type="email" aria-label="Email" placeholder="E-mail" class="form-control border border-primary">
-  	<input id="user-name" #_userName type="text" aria-label="User Name" placeholder="Username" class="form-control border border-primary">
+  <form [formGroup]="checkOutForm" (ngSubmit)="onSubmit()">
+  	  <div class="row">
+	    <div class="col">
+		      <input id="email" type="email" formControlName="_email" placeholder="Email">	
+		      <input id="user-name" type="text" formControlName="_userName" placeholder="UserName">
+
+		      <button class="button" type="submit">PurChase</button> 
+	    </div>
+	  </div>
+</form>
 	
 	</div>
 	</form>
